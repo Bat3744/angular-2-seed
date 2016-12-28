@@ -11,6 +11,6 @@ import { Subject }           from 'rxjs/Subject';
 
 export class PrestationsComponent {
 
-  srcimage = 'static/img_sorbone.jpg';
+  srcimage = 'app/static/img_sorbone.jpg';
 
 }
