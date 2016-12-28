@@ -42,14 +42,10 @@ var webpackConfig = {
           'angular2-router-loader'
         ]
       },
-      {
-        test: /\.css$/,
-        loader: 'raw-loader'
-      },
 
-      // { test: /\.css$/, loader: 'style-loader!css-loader' },
+      //{ test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.jpg$/, loader: 'file-loader' }
+      //{ test: /\.jpg$/, loader: 'file-loader' }
     ]
   }
 
