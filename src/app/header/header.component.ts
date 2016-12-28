@@ -11,6 +11,6 @@ import { Subject }           from 'rxjs/Subject';
 
 export class HeaderComponent {
 
-  srcLogo = 'logo.jpg';
+  srcLogo = 'static/logo.jpg';
 
 }
