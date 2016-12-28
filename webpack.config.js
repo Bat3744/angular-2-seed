@@ -13,7 +13,7 @@ var webpackConfig = {
   },
 
   output: {
-    publicPath: '',
+    publicPath: '/',
     path: path.resolve(__dirname, './dist'),
   },
 
