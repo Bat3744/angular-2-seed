@@ -1,7 +1,8 @@
 import './polyfills.browser';
-import './app/static/style.css';
+import './app/static/styles.css';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
 export const platformRef = platformBrowserDynamic();
 
