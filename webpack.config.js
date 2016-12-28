@@ -4,6 +4,7 @@ if (!production) { require('dotenv').config(); }
 var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Webpack Config
 var webpackConfig = {
@@ -41,7 +42,12 @@ var webpackConfig = {
           'angular2-router-loader'
         ]
       },
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      {
+        test: /\.css$/,
+        loader: 'raw-loader'
+      },
+
+      // { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.jpg$/, loader: 'file-loader' }
     ]
