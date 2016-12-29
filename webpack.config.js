@@ -45,7 +45,7 @@ var webpackConfig = {
 
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.jpg$/, loader: 'url-loader' }
+      { test: /\.jpg$/, loader: 'file-loader' }
     ]
   }
 
