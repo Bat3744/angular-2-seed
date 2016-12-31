@@ -11,6 +11,6 @@ import { Subject }           from 'rxjs/Subject';
 
 export class HeaderComponent {
 
-  srcLogo = './dist/logo.jpg';
+  srcLogo = require('../static/logo.jpg');
 
 }
