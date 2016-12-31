@@ -1,7 +1,5 @@
 import './polyfills.browser';
-import './app/static/styles.css';
-var logoSrc = require('./app/static/logo.jpg');
-import './app/static/img_sorbone.jpg';
+import './static/styles.css';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
