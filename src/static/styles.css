@@ -36,12 +36,16 @@ h2, h3 {
     text-align: center;
 }
 
+#header-bloc img {
+    width: 450px;
+}
+
 /************************************
   VALEURS
 *************************************/
 
 #valeurs-bloc {
-  background: #434343;
+  background: #007DC0;
 }
 
 /************************************
