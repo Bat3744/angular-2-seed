@@ -11,13 +11,15 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HeaderComponent }   from './header/header.component';
 import { ValeursComponent } from './valeurs/valeurs.component';
 import { PrestationsComponent } from './prestations/prestations.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ValeursComponent,
-    PrestationsComponent
+    PrestationsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
