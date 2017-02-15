@@ -1,4 +1,5 @@
-var production = process.env.NODE_ENV == 'production'
+var production = process.env.NODE_ENV == 'production';
+
 if (!production) { require('dotenv').config(); }
 
 var webpack = require('webpack');
@@ -45,7 +46,23 @@ var webpackConfig = {
 
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.jpg$/, loader: 'file-loader' }
+      { test: /\.jpg$/, loader: 'file-loader' },
+      { test: /\.json$/, use: 'json-loader' }
+    ],
+    rules: [
+      {
+        test: /\.ts$/,
+        loaders: [
+          'awesome-typescript-loader',
+          'angular2-template-loader',
+          'angular2-router-loader'
+        ]
+      },
+
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.jpg$/, loader: 'file-loader' },
+      { test: /\.json$/, use: 'json-loader' }
     ]
   }
 

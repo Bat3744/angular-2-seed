@@ -13,4 +13,6 @@ export class PrestationsComponent {
 
   srcimage = require('../../static/img_sorbone.jpg');
 
+  prestationsData = require("./prestationsData.json");
+
 }
