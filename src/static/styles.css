@@ -27,6 +27,14 @@ p {
   padding-right: 20%;
 }
 
+.car-block {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 2px;
+  margin: 1rem;
+  padding: 2rem;
+}
+
 /************************************
   header
 *************************************/
@@ -52,7 +60,8 @@ p {
 *************************************/
 
 #valeurs-bloc {
-  background: #007DC0;
+  /*background: #007DC0;*/
+  background: #fafafa;
 }
 
 #valeurs-bloc p {
