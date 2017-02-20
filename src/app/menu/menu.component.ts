@@ -5,13 +5,10 @@ import { Subject }           from 'rxjs/Subject';
 
 @Component({
   //moduleId: module.id,
-  selector:    'valeurs',
-  templateUrl: 'valeurs.component.html'
+  selector:    'menu',
+  templateUrl: 'menu.component.html'
 })
 
-export class ValeursComponent {
-
-  srcImg1 = require('../../static/img1-2.png');
-  srcImg2 = require('../../static/img2-2.png');
+export class MenuComponent {
 
 }

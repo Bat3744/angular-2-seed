@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+import { MenuComponent }   from './menu/menu.component';
 import { HeaderComponent }   from './header/header.component';
 import { ValeursComponent } from './valeurs/valeurs.component';
 import { PrestationsComponent } from './prestations/prestations.component';
@@ -16,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
     HeaderComponent,
     ValeursComponent,
     PrestationsComponent,

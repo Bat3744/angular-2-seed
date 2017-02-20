@@ -32,7 +32,39 @@ p {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border-radius: 2px;
   margin: 1rem;
+}
+
+.card-p {
   padding: 2rem;
+}
+
+/************************************
+  menu
+*************************************/
+
+.navbar {
+  width: 220px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: #191b1c;
+  border-radius: 0px;
+  border: none;
+  padding-top: 248px;
+}
+
+.navbar a{
+  transition: color 0.2s,padding 0.2s;
+  color: #919191;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.active-elt,
+.navbar a:hover {
+  color: #fff !important;
 }
 
 /************************************
@@ -41,7 +73,7 @@ p {
 
 #header-bloc.container {
   background: #FFFFFF;
-  padding: 80px 0 50px 0;
+  padding: 0 0 30px 0;
 }
 
 #header-bloc h1 {
@@ -53,6 +85,10 @@ p {
 
 #header-bloc img {
     width: 450px;
+}
+
+#header-bloc {
+  border-bottom: 1px solid #E5E5E5;
 }
 
 /************************************
@@ -67,6 +103,10 @@ p {
 #valeurs-bloc p {
   font-size: 20px;
   padding-top: 20px;
+}
+
+#valeurs-bloc img {
+  width: 100%;
 }
 
 /************************************
