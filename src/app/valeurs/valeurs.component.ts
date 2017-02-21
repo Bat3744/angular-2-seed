@@ -14,4 +14,6 @@ export class ValeursComponent {
   srcImg1 = require('../../static/img1-2.png');
   srcImg2 = require('../../static/img2-2.png');
 
+  valeursData = require("./valeursData.json");
+
 }

@@ -4,15 +4,13 @@
 
       <h2>Control’Air s’engage à vos côtés</h2>
 
-      <div class="row car-block">
+      <div class="row">
 
-        <div class="col-md-6">
-          <p class="card-p">La société Control’Air s’est spécialisée dans le contrôle des sorbonnes de laboratoire et des différents équipements de protection ventilés de laboratoire.</p>
-        </div>
-
-        <div class="col-md-6">
-          <img [src]="srcImg1" />
-        </div>
+        <ul>
+          <li *ngFor="let valeur of valeursData.valeurs">
+            {{valeur.name}}
+          </li>
+        </ul>
 
       </div>
 
@@ -27,26 +25,6 @@
         </div>
 
       </div>
-
-      <!--      <div class="row">
-
-        <div class="col-md-12">
-          <p class="car-block">Control’Air s’engage à trouver des solutions techniques et vous conseils en répondant aux problématiques d’hygiène, de sécurité des personnes et d’environnement que vous rencontrez dans votre quotidien. Soucieuse de  répondre parfaitement à vos attentes et aux exigences normatives en vigueur, Control’Air est disponible et réactive et vous accompagne partout en France.</p>
-        </div>
-
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <p class="car-block">Nous mettons un point d’honneur à joindre à nos mesures une interprétation claire et détaillée des résultats des contrôles réalisés ainsi que des préconisations d’utilisations de vos sorbonnes de laboratoire et autres équipements de protection ventilés.</p>
-        </div>
-
-        <div class="col-md-6">
-          <p class="car-block">Mettre à disposition des équipements de protection collective pour ses collaborateurs est une nécessité. S’assurer que leur performance est au rendez vous, c’est essentiel. </p>
-        </div>
-
-      </div>-->
 
     </div>
 
