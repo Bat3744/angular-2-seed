@@ -1,19 +1,20 @@
 <div id="valeurs-bloc" class="container">
 
-    <div class="content">
+  <div class="row">
+    <h1>VALEURS</h1>
+  </div>
 
-      <h2>Control’Air s’engage à vos côtés</h2>
+  <div class="row">
 
-      <div class="row">
+    <ul>
+      <li *ngFor="let valeur of valeursData.valeurs">
+        {{valeur.name}}
+      </li>
+    </ul>
 
-        <ul>
-          <li *ngFor="let valeur of valeursData.valeurs">
-            {{valeur.name}}
-          </li>
-        </ul>
+  </div>
 
-      </div>
-
+<!--
       <div class="row car-block">
 
         <div class="col-md-6">
@@ -25,7 +26,7 @@
         </div>
 
       </div>
+-->
 
-    </div>
 
 </div>
