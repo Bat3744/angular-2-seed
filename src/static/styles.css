@@ -169,6 +169,12 @@ p {
   background: #E5E5E5;
 }
 
+#prestations-bloc li{
+  padding: 20px;
+  display: inline-block;
+  width: 300px;
+}
+
 #prestations-bloc .produit {
   background: #444444;
   padding: 15px;

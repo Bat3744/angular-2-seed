@@ -6,6 +6,16 @@
 
     <div class="row">
 
+      <ul>
+        <li *ngFor="let prestation of prestationsData.prestations">
+          <h4>{{prestation.name}}</h4>
+          <a *ngFor="let control of prestation.controls">
+            <p>{{control.type}}</p>
+            <p>{{control.detail}}</p>
+          </a>
+        </li>
+      </ul>
+
       <a *ngFor="let prestation of prestationsData.prestations">
         <div class="module hero">
             <h4>{{prestation.name}}</h4>
