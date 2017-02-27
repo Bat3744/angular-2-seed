@@ -6,109 +6,40 @@
 
     <div class="row">
 
+
+      <table class="table table-striped">
+
+        <tr *ngFor="let prestation of prestationsData.prestations">
+
+          <td [attr.rowspan]="prestation.controls.length">{{prestation.name}}</td>
+
+          <td>{{prestation.controls[0].type}}</td>
+          <td>{{prestation.controls[0].detail}}</td>
+
+        </tr>
+
+      </table>
+
+
+
+
+
+
+
+
+
+
+
       <ul>
         <li *ngFor="let prestation of prestationsData.prestations">
           <h4>{{prestation.name}}</h4>
-          <a *ngFor="let control of prestation.controls">
+          <div *ngFor="let control of prestation.controls">
             <p>{{control.type}}</p>
             <p>{{control.detail}}</p>
-          </a>
+          </div>
+          <a href="">En savoir plus</a>
         </li>
       </ul>
-
-      <a *ngFor="let prestation of prestationsData.prestations">
-        <div class="module hero">
-            <h4>{{prestation.name}}</h4>
-            <a *ngFor="let control of prestation.controls">
-                <p>{{control.type}}</p>
-                <p>{{control.detail}}</p>
-            </a>
-        </div>
-      </a>
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Essai de réception - sorbonne de laboratoire</p>
-            </div>
-            <div class="info" data-toggle="modal" data-target="#myModal">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Essai de routine - sorbonne de laboratoire</p>
-            </div>
-            <div class="info">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Sorbonne à recirculation</p>
-            </div>
-            <div class="info">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Hotte de laboratoire</p>
-            </div>
-            <div class="info">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Bras orientable aspirant</p>
-            </div>
-            <div class="info">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Armoire ventilée de laboratoire</p>
-            </div>
-            <div class="info">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Audit aéraulique</p>
-            </div>
-            <div class="info">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-produit">
-            <div class="produit">
-                <img [src]="srcimage" />
-                <p>Formation</p>
-            </div>
-            <div class="info">
-                En savoir plus<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </div>
-        </div>
 
     </div>
 

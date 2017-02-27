@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Patua+One|Source+Sans+Pro');
 @import url('https://fonts.googleapis.com/css?family=Nunito|Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 h1 {
   color: #191b1c !important;
@@ -15,7 +16,8 @@ h2, h3 {
 }
 
 p {
-  font-family: 'Source Sans Pro', sans-serif
+  font-family: 'Ubuntu', sans-serif;
+  /*font-family: 'Source Sans Pro', sans-serif*/
 }
 
 .container {
@@ -143,18 +145,17 @@ p {
 
 #valeurs-bloc ul {
   list-style:none;
+  padding: 0;
 }
 
 #valeurs-bloc li{
-  padding: 20px;
-  display: inline-block;
-  width: 450px;
+  padding: 20px 40px 20px 0;
+  display: inline-flex;
+  width: 50%;
 }
-
 
 #valeurs-bloc p {
   font-size: 16px;
-  padding-top: 20px;
 }
 
 #valeurs-bloc img {
