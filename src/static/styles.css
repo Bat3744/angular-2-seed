@@ -205,9 +205,13 @@ p {
     float: right;
 }
 
-/************************************
-  CONTACT
-*************************************/
+#prestations-bloc td.prestation:hover {
+  background: #03A9F4;
+  cursor: pointer;
+}
+  /************************************
+    CONTACT
+  *************************************/
 
 #contact p {
   font-size: 18px;

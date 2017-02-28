@@ -9,37 +9,18 @@
 
       <table class="table table-striped">
 
-        <tr *ngFor="let prestation of prestationsData.prestations">
+        <tr *ngFor="let prestation of prestationsData.prestations; let i = index;">
 
-          <td [attr.rowspan]="prestation.controls.length">{{prestation.name}}</td>
+          <td>{{prestation.name}}</td>
+          <!--<td [attr.rowspan]="prestation.controls.length">{{prestation.name}}</td>-->
 
           <td>{{prestation.controls[0].type}}</td>
           <td>{{prestation.controls[0].detail}}</td>
+          <td class="prestation prestation-{{i}}">En savoir plus <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></td>
 
         </tr>
 
       </table>
-
-
-
-
-
-
-
-
-
-
-
-      <ul>
-        <li *ngFor="let prestation of prestationsData.prestations">
-          <h4>{{prestation.name}}</h4>
-          <div *ngFor="let control of prestation.controls">
-            <p>{{control.type}}</p>
-            <p>{{control.detail}}</p>
-          </div>
-          <a href="">En savoir plus</a>
-        </li>
-      </ul>
 
     </div>
 
