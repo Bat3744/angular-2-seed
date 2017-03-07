@@ -143,23 +143,22 @@ p {
   background: #fafafa;
 }
 
+#prestations-bloc ul,
 #valeurs-bloc ul {
   list-style:none;
   padding: 0;
 }
 
-#valeurs-bloc li{
+#prestations-bloc li,
+#valeurs-bloc li {
   padding: 20px 40px 20px 0;
   display: inline-flex;
   width: 50%;
 }
 
+#prestations-bloc p,
 #valeurs-bloc p {
   font-size: 16px;
-}
-
-#valeurs-bloc img {
-  width: 100%;
 }
 
 /************************************
@@ -170,48 +169,19 @@ p {
   background: #E5E5E5;
 }
 
-#prestations-bloc li{
-  padding: 20px;
-  display: inline-block;
-  width: 300px;
-}
-
-#prestations-bloc .produit {
-  background: #444444;
-  padding: 15px;
-  color:#E5E5E5;
-}
-
-#prestations-bloc .col-produit {
-  margin: 10px 0;
-}
-
-#prestations-bloc .produit img {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
 #prestations-bloc .info {
     background: #fff;
     padding: 10px;
-}
-
-#prestations-bloc .info:hover {
-    background: #BCB5AD;
-    cursor: pointer;
-}
-
-#prestations-bloc .info .glyphicon {
-    float: right;
 }
 
 #prestations-bloc td.prestation:hover {
   background: #03A9F4;
   cursor: pointer;
 }
-  /************************************
-    CONTACT
-  *************************************/
+
+/************************************
+  CONTACT
+*************************************/
 
 #contact p {
   font-size: 18px;

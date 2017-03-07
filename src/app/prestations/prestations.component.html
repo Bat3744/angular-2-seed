@@ -6,21 +6,45 @@
 
     <div class="row">
 
-
       <table class="table table-striped">
 
-        <tr *ngFor="let prestation of prestationsData.prestations; let i = index;">
-
-          <td>{{prestation.name}}</td>
-          <!--<td [attr.rowspan]="prestation.controls.length">{{prestation.name}}</td>-->
-
-          <td>{{prestation.controls[0].type}}</td>
-          <td>{{prestation.controls[0].detail}}</td>
-          <td class="prestation prestation-{{i}}">En savoir plus <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></td>
-
+        <tr>
+          <th colspan="4">Contrôle des équipements de protection collective ventilés</th>
         </tr>
 
+        <ng-container *ngFor="let prestation of prestationsData.prestations; let i = index;">
+
+          <tr *ngFor="let control of prestation.controls; let j = index;">
+
+            <td *ngIf="j == 0" [attr.rowspan]="prestation.controls.length">{{prestation.name}}</td>
+
+            <td>{{prestation.controls[j].type}}</td>
+            <td>{{prestation.controls[j].detail}}</td>
+            <td class="prestation prestation-{{i}}">En savoir plus <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></td>
+
+          </tr>
+
+        </ng-container>
+
       </table>
+
+    </div>
+
+    <div class="row audit">
+      <h2>Audit aéraulique :</h2>
+      <p>CONTROL'AIR est à votre service pour vous fournir tous les conseils dans les domaines de la ventilation. Nous intervenons sous forme d'audits, de campagnes de mesures et d'aide à la résolution de vos problématiques de ventilation. Une vision globale des phénomènes rencontrés sur site nous permet de vous apporter des solutions d'amélioration adaptées à vos besoins et contraintes.</p>
+    </div>
+
+    <div class="row">
+
+      <ul>
+        <li>
+          <p>Chaque prestation est réalisée sur site et donne lieu à la production d'un rapport de mesure, où sont consignés le descriptif détaillé des contrôles réalisés, les relevés des mesures réalisés ainsi que des préconisations d'utilisations de vos équipements de protection collective.</p>
+        </li>
+        <li>
+          <p>CONTROL'AIR s'engage à ce que tout intervenant possède une habilitation UIC aux risques chimiques</p>
+        </li>
+      </ul>
 
     </div>
 
