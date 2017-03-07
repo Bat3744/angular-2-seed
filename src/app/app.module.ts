@@ -6,7 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 import { MenuComponent }   from './menu/menu.component';
 import { HeaderComponent }   from './header/header.component';
@@ -28,6 +29,8 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   bootstrap: [ AppComponent ]
