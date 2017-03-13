@@ -48,6 +48,7 @@ var webpackConfig = {
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.jpg$/, loader: 'file-loader' },
       { test: /\.png$/, loader: 'file-loader' },
+      { test: /\.gif$/, loader: 'file-loader' },
       { test: /\.json$/, use: 'json-loader' }
     ],
     rules: [
@@ -64,6 +65,7 @@ var webpackConfig = {
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.jpg$/, loader: 'file-loader' },
       { test: /\.png$/, loader: 'file-loader' },
+      { test: /\.gif$/, loader: 'file-loader' },
       { test: /\.json$/, use: 'json-loader' }
     ]
   }

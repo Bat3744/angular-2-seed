@@ -145,8 +145,8 @@ p {
 
 #prestations-bloc ul,
 #valeurs-bloc ul {
-  list-style:none;
   padding: 0;
+  list-style-image: url('ulBullet.gif');
 }
 
 #prestations-bloc li,
@@ -159,6 +159,12 @@ p {
 #prestations-bloc p,
 #valeurs-bloc p {
   font-size: 16px;
+}
+
+#prestations-bloc .card-bloc {
+  padding: 10px;
+  display: inline-flex;
+  width: 47%;
 }
 
 /************************************
