@@ -179,6 +179,14 @@ p {
   cursor: pointer;
 }
 
+.detailPrestationPopin {
+  margin: 0 15px;
+}
+
+.detailPrestationPopin img {
+  width: 100%;
+}
+
 /************************************
   CONTACT
 *************************************/

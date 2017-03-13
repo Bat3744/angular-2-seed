@@ -20,7 +20,7 @@
 
             <td>{{prestation.controls[j].type}}</td>
             <td>{{prestation.controls[j].detail}}</td>
-            <td class="prestation prestation-{{i}}" (click)="enSavoirPlusClick(elem)">En savoir plus <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></td>
+            <td class="prestation prestation-{{i}}" (click)="enSavoirPlusClick($event, prestation, j)">En savoir plus <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></td>
 
           </tr>
 

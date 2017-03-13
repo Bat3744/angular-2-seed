@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, ViewChild } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
 
@@ -16,20 +16,25 @@ export class PrestationsComponent {
 
   prestationsData = require("./prestationsData.json");
 
-  enSavoirPlusClick = function(elt) {
+  enSavoirPlusClick = function(event, prestation, controlId) {
 
-    let htmlPopin = this.buildPopinDetail(elt);
+    let popintHtml = this.buildPopinDetail(prestation, controlId),
+      popinTitle = this.buildPopinTitle(prestation, controlId);
 
     this.modal.alert()
       .size('lg')
       .showClose(true)
-      .title('A simple Alert style modal window')
-      .body(htmlPopin)
+      .title(popinTitle)
+      .body(popintHtml)
       .open();
   };
 
-  buildPopinDetail = function(refPrestation) {
-    return require('./detailPrestation/sorbonneReception.html');
+  buildPopinDetail = function(prestation, controlId) {
+    return require('./detailPrestation/' + prestation.controls[controlId].code + '.html');
+  };
+
+  buildPopinTitle = function(prestation, controlId) {
+    return prestation.name + ' - ' + prestation.controls[controlId].type;
   }
 
 }
