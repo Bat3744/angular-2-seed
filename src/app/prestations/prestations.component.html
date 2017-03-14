@@ -6,9 +6,9 @@
 
     <div class="row">
 
-      <table class="table table-striped">
+      <table class="table table-striped table-bordered table-condensed">
 
-        <tr>
+        <tr class="info">
           <th colspan="4">Contrôle des équipements de protection collective ventilés</th>
         </tr>
 
@@ -16,10 +16,10 @@
 
           <tr *ngFor="let control of prestation.controls; let j = index;">
 
-            <td *ngIf="j == 0" [attr.rowspan]="prestation.controls.length">{{prestation.name}}</td>
+            <td *ngIf="j == 0" [attr.rowspan]="prestation.controls.length" class="name">{{prestation.name}}</td>
 
             <td>{{prestation.controls[j].type}}</td>
-            <td>{{prestation.controls[j].detail}}</td>
+            <td class="detail">{{prestation.controls[j].detail}}</td>
             <td class="prestation prestation-{{i}}" (click)="enSavoirPlusClick($event, prestation, j)">En savoir plus <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></td>
 
           </tr>
