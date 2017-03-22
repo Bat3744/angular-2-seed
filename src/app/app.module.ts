@@ -13,6 +13,7 @@ import { MenuComponent }   from './menu/menu.component';
 import { HeaderComponent }   from './header/header.component';
 import { ValeursComponent } from './valeurs/valeurs.component';
 import { PrestationsComponent } from './prestations/prestations.component';
+import { DevisComponent } from './devis/devis.component';
 import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     ValeursComponent,
     PrestationsComponent,
+    DevisComponent,
     ContactComponent
   ],
   imports: [
