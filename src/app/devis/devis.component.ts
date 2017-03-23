@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Devis } from './devis';
 
 @Component({
   selector:    'devis',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
 })
 
 export class DevisComponent {
+
+  model = new Devis();
+
+  natures = [
+    'Essais de réception - sorbonnes de laboratoire',
+    'Essais de routine - sorbonnes de laboratoire',
+    'Hottes - Armoires ventilées - Bras aspirants',
+    'Audit aéraulique - réseau de ventilation',
+    'Formation'
+  ];
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.model); }
 
 }
