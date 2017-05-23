@@ -115,7 +115,8 @@ p {
 
 #header-bloc .header-image h3 {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
 #header-bloc .header-text {
@@ -156,20 +157,21 @@ p {
 
 #prestations-bloc ul,
 #valeurs-bloc ul {
-  padding: 0;
+  overflow: auto;
   list-style-image: url('ulBullet.gif');
 }
 
 #prestations-bloc li,
 #valeurs-bloc li {
   padding: 20px 40px 20px 0;
-  display: inline-flex;
+  float: left;
   width: 50%;
 }
 
 #prestations-bloc p,
 #valeurs-bloc p {
   font-size: 16px;
+  text-align: justify;
 }
 
 #prestations-bloc .card-bloc {
