@@ -13,11 +13,12 @@ export class ValeursService {
   constructor (private http: Http) {}
 
   getData(): Observable<Response> {
-    return this.http.get('http://localhost:3000/test').map(this.extractData);
+    return this.http.get('http://localhost:3003/test').map(this.extractData);
   }
 
   private extractData(res: Response) {
     let body = res.json();
+    console.log(body);
     return body.data || { };
   }
 
