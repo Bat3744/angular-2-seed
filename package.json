@@ -7,8 +7,9 @@
     "build": "NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
     "watch": "npm run build -- --watch",
     "postinstall": "npm run build",
-    "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "start": "npm run server"
+    "client": "webpack-dev-server --inline --progress --port 3000 --content-base src",
+    "server": "tsc -p ./server && \"tsc -w -p ./server\" \"nodemon dist/server/server.ts\" ",
+    "start": "npm run server && npm run client"
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",

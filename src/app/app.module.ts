@@ -12,6 +12,7 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { MenuComponent }   from './menu/menu.component';
 import { HeaderComponent }   from './header/header.component';
 import { ValeursComponent } from './valeurs/valeurs.component';
+import { ValeursService } from './valeurs/valeurs.service';
 import { PrestationsComponent } from './prestations/prestations.component';
 import { DevisComponent } from './devis/devis.component';
 import { ContactComponent } from './contact/contact.component';
@@ -35,7 +36,8 @@ import { ContactComponent } from './contact/contact.component';
     BootstrapModalModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [ ValeursService ]
 })
 export class AppModule {
 
