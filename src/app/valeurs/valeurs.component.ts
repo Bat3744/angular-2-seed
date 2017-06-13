@@ -10,16 +10,19 @@ import { ValeursService }           from './valeurs.service';
 
 export class ValeursComponent {
 
-  data: string;
+  dataTest: string;
 
   constructor (private valeursService: ValeursService) {}
+
+  ngOnInit() {
+    this.valeursService.getData().subscribe(
+      dataTest => this.dataTest = dataTest.toString()
+    );
+  }
 
   srcImg1 = require('../../static/img1-2.png');
   srcImg2 = require('../../static/img2-2.png');
 
   valeursData = require("./valeursData.json");
-
-  getValeurTest = this.valeursService.getData()
-    .subscribe(data => this.data = data.toString());
 
 }

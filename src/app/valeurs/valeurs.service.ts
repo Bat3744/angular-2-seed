@@ -12,14 +12,32 @@ export class ValeursService {
   // Resolve HTTP using the constructor
   constructor (private http: Http) {}
 
-  getData(): Observable<Response> {
-    return this.http.get('http://localhost:3003/test').map(this.extractData);
+  getData(): Observable<string> {
+    return this.http.get(this.getServerUrl() + '/test')
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  getServerUrl(): string {
+    return 'http://' + window.location.hostname + ':3003';
   }
 
   private extractData(res: Response) {
-    let body = res.json();
-    console.log(body);
-    return body.data || { };
+    return res.text();
+  }
+
+  private handleError (error: Response | any) {
+    // In a real world app, you might use a remote logging infrastructure
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Observable.throw(errMsg);
   }
 
 }
