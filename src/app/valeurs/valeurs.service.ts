@@ -19,7 +19,7 @@ export class ValeursService {
   }
 
   getServerUrl(): string {
-    return 'https://' + window.location.hostname + ':3003';
+    return 'http://' + window.location.hostname + ':3003';
   }
 
   private extractData(res: Response) {
