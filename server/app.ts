@@ -1,5 +1,16 @@
-var express = require('express');
-var app = express();
+var express = require('express'),
+  app = express(),
+  env = process.env.NODE_ENV || 'development',
+  forceSsl = function (req, res, next) {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(['https://', req.get('Host'), req.url].join(''));
+    }
+    return next();
+  };
+
+if (env === 'production') {
+  app.use(forceSsl);
+}
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
