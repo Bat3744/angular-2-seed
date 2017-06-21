@@ -4,11 +4,15 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito|Quicksand');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 h1 {
   color: #191b1c;
   font-size: 35px !important;
-  font-family: 'Patua One', cursive;
+  font-family: 'Comfortaa', cursive;
+  font-weight: bold;
+  /*border-bottom: 1px solid;*/
 }
 
 h2, h3 {
@@ -29,7 +33,7 @@ p {
 
 .container {
   width: 100% !important;
-  padding: 40px 20% 40px 20%;
+  padding: 40px 25% 40px 25%;
 }
 
 .row {
@@ -150,31 +154,11 @@ p {
   background: #ffffff;
 }
 
-#prestations-bloc ul,
-#valeurs-bloc ul {
-  overflow: auto;
-  list-style-image: url('ulBullet.gif');
-}
-
-#prestations-bloc li,
-#valeurs-bloc li {
-  padding: 20px 40px 20px 0;
-  float: left;
-  width: 50%;
-  border-radius: 6px;
-  border: 1px solid #E3E3E3;
-}
-
 #prestations-bloc p,
 #valeurs-bloc p {
   font-size: 16px;
   text-align: justify;
-}
-
-#prestations-bloc .card-bloc {
-  padding: 10px;
-  display: inline-flex;
-  width: 47%;
+  margin-top: 30px;
 }
 
 /************************************
@@ -188,6 +172,7 @@ p {
 #prestations-bloc td {
   vertical-align: middle;
   padding: 10px;
+  background: #fff;
 }
 
 #prestations-bloc td.name {
@@ -203,6 +188,12 @@ p {
   padding: 15px;
   background: #3A5068;
   color: #fff;
+}
+
+#prestations-bloc .card-bloc {
+  padding: 10px;
+  display: inline-flex;
+  width: 47%;
 }
 
 #prestations-bloc .info {

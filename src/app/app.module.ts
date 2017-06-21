@@ -13,6 +13,7 @@ import { MenuComponent }   from './menu/menu.component';
 import { HeaderComponent }   from './header/header.component';
 import { ValeursComponent } from './valeurs/valeurs.component';
 import { ValeursService } from './valeurs/valeurs.service';
+import { ReglementationComponent } from './reglementation/reglementation.component';
 import { PrestationsComponent } from './prestations/prestations.component';
 import { DevisComponent } from './devis/devis.component';
 import { ContactComponent } from './contact/contact.component';
@@ -23,6 +24,7 @@ import { ContactComponent } from './contact/contact.component';
     MenuComponent,
     HeaderComponent,
     ValeursComponent,
+    ReglementationComponent,
     PrestationsComponent,
     DevisComponent,
     ContactComponent

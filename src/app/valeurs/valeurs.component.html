@@ -1,17 +1,11 @@
 <div id="valeurs-bloc" class="container">
 
   <div class="row">
-    <h1>VALEURS {{ dataTest }}</h1>
+    <h1>VALEURS</h1>
   </div>
 
   <div class="row">
-
-    <ul>
-      <li *ngFor="let valeur of valeursData.valeurs">
-        <p>{{valeur.name}}</p>
-      </li>
-    </ul>
-
+      <p *ngFor="let valeur of valeursData.valeurs">{{valeur.name}}</p>
   </div>
 
 </div>
