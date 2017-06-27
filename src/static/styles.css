@@ -12,12 +12,16 @@ h1 {
   font-size: 35px !important;
   font-family: 'Comfortaa', cursive;
   font-weight: bold;
-  /*border-bottom: 1px solid;*/
+  padding-bottom: 30px;
 }
 
 h2, h3 {
   color: #444;
   font-family: 'Quicksand', cursive;
+}
+
+h3 {
+  padding-bottom: 10px;
 }
 
 p {
@@ -150,7 +154,7 @@ p {
 
 #valeurs-bloc {
   /*background: #007DC0;*/
-  background: #ffffff;
+  background: #f1f1f1;
 }
 
 #prestations-bloc p,
@@ -165,11 +169,25 @@ p {
 *************************************/
 
 #reglementation-bloc {
-  background: #f1f1f1;
+  background: #ffffff;
 }
 
 #reglementation-bloc img {
   width: 100%;
+  margin-top: 20px;
+}
+
+#reglementation-bloc p {
+  font-size: 14px;
+}
+
+.norme-vigueur-row {
+  margin-top: 20px;
+}
+
+.norme-vigueur h3 {
+  margin-top: 45px;
+  padding-bottom: 0;
 }
 
 
@@ -178,7 +196,7 @@ p {
 *************************************/
 
 #prestations-bloc {
-  background: #ffffff;
+  background: #f1f1f1;
 }
 
 #prestations-bloc td {

@@ -8,6 +8,7 @@ import { Component, OnInit }  from '@angular/core';
 
 export class ReglementationComponent {
 
-  reglementationSrc = require('../../static/reglementation_1.png');
+  reglementation1Src = require('../../static/reglementation_1.png');
+  reglementation2Src = require('../../static/reglementation_2.png');
 
 }
