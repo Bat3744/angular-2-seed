@@ -18,10 +18,16 @@ h1 {
 h2, h3 {
   color: #444;
   font-family: 'Quicksand', cursive;
+  font-weight: 800;
 }
 
 h3 {
   padding-bottom: 10px;
+}
+
+h4 {
+  font-weight: 800;
+  margin-top: 30px;
 }
 
 p {
@@ -243,6 +249,12 @@ p {
 
 .detailPrestationPopin img {
   width: 100%;
+}
+
+.detailPrestationPopin p {
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 20px;
 }
 
 /************************************
