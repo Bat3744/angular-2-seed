@@ -16,7 +16,7 @@ h1 {
 }
 
 h2, h3 {
-  color: #444;
+  color: #3A5068; /*#444;*/
   font-family: 'Quicksand', cursive;
   font-weight: 800;
 }
@@ -36,6 +36,7 @@ p {
   line-height: 24px;
   font-style: normal;
   font-weight: 300;
+  color: #5B5B5B;
 
   /*font-family: 'Ubuntu', sans-serif;*/
   /*font-family: 'Source Sans Pro', sans-serif*/
@@ -117,7 +118,7 @@ p {
 }
 
 #header-bloc .header-image {
-  padding: 60px 30px 0 75px;
+  padding: 80px 30px 0 75px;
   text-align: center;
 }
 
@@ -135,6 +136,7 @@ p {
 #header-bloc .header-text img {
   max-width: 100%;
   max-height: 350px;
+  margin-top: 56px;
 }
 
 #header-bloc .header-text h1 {
@@ -209,6 +211,7 @@ p {
   vertical-align: middle;
   padding: 10px;
   background: #fff;
+  font-family: 'Roboto',Helvetica,Arial,sans-serif;
 }
 
 #prestations-bloc td.name {
@@ -223,6 +226,7 @@ p {
   text-align: center;
   padding: 15px;
   background: #3A5068;
+  font-size: 17px;
   color: #fff;
 }
 

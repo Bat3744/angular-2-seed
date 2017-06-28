@@ -19,7 +19,6 @@
             <td *ngIf="j == 0" [attr.rowspan]="prestation.controls.length" class="name">{{prestation.name}}</td>
 
             <td>{{prestation.controls[j].type}}</td>
-            <td class="detail">{{prestation.controls[j].detail}}</td>
             <td class="prestation prestation-{{i}}" (click)="enSavoirPlusClick($event, prestation, j)">En savoir plus <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></td>
 
           </tr>
