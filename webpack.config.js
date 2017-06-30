@@ -33,24 +33,6 @@ var webpackConfig = {
   ],
 
   module: {
-    loaders: [
-      // .ts files for TypeScript
-      {
-        test: /\.ts$/,
-        loaders: [
-          'awesome-typescript-loader',
-          'angular2-template-loader',
-          'angular2-router-loader'
-        ]
-      },
-
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.jpg$/, loader: 'file-loader' },
-      { test: /\.png$/, loader: 'file-loader' },
-      { test: /\.gif$/, loader: 'file-loader' },
-      { test: /\.json$/, use: 'json-loader' }
-    ],
     rules: [
       {
         test: /\.ts$/,
@@ -60,13 +42,22 @@ var webpackConfig = {
           'angular2-router-loader'
         ]
       },
-
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.jpg$/, loader: 'file-loader' },
-      { test: /\.png$/, loader: 'file-loader' },
-      { test: /\.gif$/, loader: 'file-loader' },
-      { test: /\.json$/, use: 'json-loader' }
+      {
+        test: /\.(jpg|png|gif)$/,
+        loader: 'url-loader?limit=10000'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader'
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader'
+      }
     ]
   }
 
