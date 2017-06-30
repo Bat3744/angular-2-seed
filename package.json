@@ -4,12 +4,14 @@
   "description": "A simple starter Angular2 project ready to deploy to Heroku",
   "main": "server/app.ts",
   "scripts": {
-    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
+    "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
     "watch": "npm run build -- --watch",
     "postinstall": "npm run build",
     "client": "webpack-dev-server --inline --progress --port 3000 --content-base src",
     "server": "tsc -p ./server && node dist/server/app.js",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "createAssetsDir": "mkdir -p dist/static",
+    "copyImages": "cp -R src/static dist/"
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",

@@ -44,7 +44,7 @@ var webpackConfig = {
       },
       {
         test: /\.(jpg|png|gif)$/,
-        loader: 'url-loader?limit=10000'
+        loader: 'url-loader'
       },
       {
         test: /\.css$/,

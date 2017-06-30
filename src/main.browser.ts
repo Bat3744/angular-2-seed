@@ -1,5 +1,5 @@
 import './polyfills.browser';
-import './static/styles.css';
+import './styles.css';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
