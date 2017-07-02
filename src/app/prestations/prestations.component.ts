@@ -15,9 +15,6 @@ export class PrestationsComponent {
   }
 
   prestationsData = require("./prestationsData.json");
-  essaiReceptionSrc = require('../../static/essai_reception_1.png');
-  confinementGazSrc = require('../../static/confinement-gaz.png');
-  mesureFrontaleSrc = require('../../static/mesure_frontale.png');
 
   enSavoirPlusClick = function(event, prestation, controlId) {
 

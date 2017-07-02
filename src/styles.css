@@ -47,6 +47,12 @@ p {
   padding: 40px 25% 40px 25%;
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 40px 10% 40px 10%;
+  }
+}
+
 .row {
   margin: 0px;
 }
