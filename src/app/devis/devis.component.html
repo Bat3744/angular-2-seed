@@ -59,7 +59,11 @@
 
     </div>
 
-    <div class="g-recaptcha" data-sitekey="6LfVbiEUAAAAAACvbi_AmVq6GZ__ORNZmejycT3o"></div>
+    <div class="row">
+      <div class="form-group col-md-8">
+        <recaptcha (resolved)="resolved($event)" siteKey="6LfVbiEUAAAAAACvbi_AmVq6GZ__ORNZmejycT3o"></recaptcha>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-4">

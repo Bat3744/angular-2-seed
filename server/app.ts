@@ -23,6 +23,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/test', function (req, res) {
+  res.send('Hello test World!');
+});
+
+app.post('/submitDevis', function (req, res) {
+  console.log('req = ' + req);
   res.send('Hello World! 1');
 });
 

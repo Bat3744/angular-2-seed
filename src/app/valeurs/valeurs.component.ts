@@ -12,7 +12,8 @@ export class ValeursComponent {
 
   dataTest: string;
 
-  constructor (private valeursService: ValeursService) {}
+  constructor (private valeursService: ValeursService) {
+  }
 
   ngOnInit() {
     this.valeursService.getData().subscribe(

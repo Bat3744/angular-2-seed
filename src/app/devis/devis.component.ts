@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Devis } from './devis';
+import { DevisService } from './devis.service';
 
 @Component({
   selector:    'devis',
@@ -7,6 +8,8 @@ import { Devis } from './devis';
 })
 
 export class DevisComponent {
+
+  constructor (private devisService: DevisService) {}
 
   model = new Devis();
 
@@ -18,11 +21,28 @@ export class DevisComponent {
     'Formation'
   ];
 
-  submitted = false;
+  captchaResponse = null;
+  dataTest = null;
+
+  resolved(captchaResponse: string) {
+    this.captchaResponse = captchaResponse;
+    // console.log(`Resolved captcha with response ${captchaResponse}:`);
+  }
 
   onSubmit() {
     console.log(this.diagnostic);
-    this.submitted = true;
+
+    this.devisService.getData().subscribe(
+      dataTest => this.dataTest = dataTest.toString()
+    );
+
+    this.devisService.submitForm({
+      form: this.diagnostic,
+      captchaResponse: this.captchaResponse
+    }).subscribe(
+      dataTest => this.dataTest = dataTest.toString()
+    );
+
   }
 
   // TODO: Remove this when we're done

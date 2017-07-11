@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { RecaptchaModule } from 'ng2-recaptcha';
 
 import { MenuComponent }   from './menu/menu.component';
 import { HeaderComponent }   from './header/header.component';
@@ -16,6 +17,7 @@ import { ValeursService } from './valeurs/valeurs.service';
 import { ReglementationComponent } from './reglementation/reglementation.component';
 import { PrestationsComponent } from './prestations/prestations.component';
 import { DevisComponent } from './devis/devis.component';
+import { DevisService } from './devis/devis.service';
 import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
@@ -34,12 +36,13 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    ModalModule.forRoot(),
     BootstrapModalModule,
+    ModalModule.forRoot(),
+    RecaptchaModule.forRoot(),
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   bootstrap: [ AppComponent ],
-  providers: [ ValeursService ]
+  providers: [ ValeursService, DevisService ]
 })
 export class AppModule {
 
