@@ -37,7 +37,7 @@ export class DevisComponent {
     );
 
     this.devisService.submitForm({
-      form: this.diagnostic,
+      form: this.model,
       captchaResponse: this.captchaResponse
     }).subscribe(
       dataTest => this.dataTest = dataTest.toString()

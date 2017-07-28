@@ -17,7 +17,8 @@
   },
   "include": [
     "./src/**/*.module.ts",
-    "./src/*.d.ts"
+    "./src/*.d.ts",
+    "./tests/*.d.ts"
   ],
   "angularCompilerOptions": {
     "debug": false

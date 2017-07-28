@@ -1,4 +1,6 @@
 var express = require('express'),
+  bodyParser = require('body-parser'),
+  formValidator = require('./formValidator'),
   app = express(),
   env = process.env.NODE_ENV || 'development',
   forceSsl = function (req, res, next) {
@@ -11,6 +13,9 @@ var express = require('express'),
 if (env === 'production') {
   app.use(forceSsl);
 }
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -27,8 +32,14 @@ app.get('/test', function (req, res) {
 });
 
 app.post('/submitDevis', function (req, res) {
-  console.log('req = ' + req);
-  res.send('Hello World! 1');
+  const form = req.body.data.form,
+    error = formValidator.validate(form);
+
+  if (error.length > 0) {
+    res.send('KO');
+  } else {
+    res.send('OK');
+  }
 });
 
 app.get('/#/test', function (req, res) {

@@ -4,6 +4,7 @@
   "description": "A simple starter Angular2 project ready to deploy to Heroku",
   "main": "server/app.ts",
   "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.ts",
     "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
     "watch": "npm run build -- --watch",
     "postinstall": "npm run build",
@@ -13,18 +14,16 @@
     "createAssetsDir": "mkdir -p dist/static",
     "copyImages": "cp -R src/static dist/"
   },
-  "contributors": [
-    "Rob Wormald <robwormald@gmail.com>",
-    "PatrickJS <github@gdi2290.com>",
-    "Vassiliy Pimkin <vassiliy.pimkin@gmail.com"
-  ],
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.1.0",
     "css-loader": "^0.26.1",
     "dotenv": "^2.0.0",
     "html-loader": "^0.4.5",
     "json-loader": "^0.5.4",
+    "mocha": "^3.4.2",
     "style-loader": "^0.13.1",
+    "ts-node": "^3.3.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.9.0"
   },
@@ -47,6 +46,7 @@
     "angular2-router-loader": "^0.3.4",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^2.2.4",
+    "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
@@ -69,20 +69,5 @@
     "webpack": "^2.2.0",
     "webpack-merge": "^1.1.0",
     "zone.js": "0.8.9"
-  },
-  "keywords": [
-    "Angular2",
-    "angular2-seed",
-    "official angular 2 seed",
-    "official angular2 seed",
-    "Heroku"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vassiliy/heroku-angular2-seed.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vassiliy/heroku-angular2-seed/issues"
-  },
-  "homepage": "https://github.com/vassiliy/heroku-angular2-seed#readme"
+  }
 }
