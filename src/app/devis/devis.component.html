@@ -11,6 +11,7 @@
       <div class="form-group col-md-4">
         <label for="nom">Nom</label>
         <input type="text" class="form-control" id="nom" required [(ngModel)]="model.nom" name="nom">
+		  <!--<div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>-->
       </div>
 
       <div class="form-group col-md-4">
@@ -24,7 +25,7 @@
 
       <div class="form-group col-md-4">
         <label for="email">Email</label>
-        <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+        <input type="text" class="form-control" id="email" required [(ngModel)]="model.email" name="email">
       </div>
 
       <div class="form-group col-md-4">
@@ -72,7 +73,5 @@
     </div>
 
   </form>
-
-  {{diagnostic}}
 
 </div>

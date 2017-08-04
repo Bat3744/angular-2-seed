@@ -1,15 +1,23 @@
-# http://editorconfig.org
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# editorconfig.org
 
 root = true
 
 [*]
+end_of_line = lf
 charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = tab
+indent_size = 4
+
+# npm install --save: npm réécrit le fichier avec un code style particulier
+[package.json]
 indent_style = space
 indent_size = 2
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
 
-[*.md]
-insert_final_newline = false
-trim_trailing_whitespace = false
+# tabs interdits dans les fichiers yaml
+[*.yml]
+indent_style = space
+indent_size = 2

@@ -1,51 +1,52 @@
-import { Component } from '@angular/core';
-import { Devis } from './devis';
-import { DevisService } from './devis.service';
+import {Component} from '@angular/core';
+import {Devis} from './devis';
+import {DevisService} from './devis.service';
 
 @Component({
-  selector:    'devis',
-  templateUrl: 'devis.component.html'
+	selector: 'devis',
+	templateUrl: 'devis.component.html'
 })
 
 export class DevisComponent {
 
-  constructor (private devisService: DevisService) {}
+	constructor(private devisService: DevisService) {
+	}
 
-  model = new Devis();
+	model = new Devis();
 
-  natures = [
-    'Essais de réception - sorbonnes de laboratoire',
-    'Essais de routine - sorbonnes de laboratoire',
-    'Hottes - Armoires ventilées - Bras aspirants',
-    'Audit aéraulique - réseau de ventilation',
-    'Formation'
-  ];
+	natures = [
+		'Essais de réception - sorbonnes de laboratoire',
+		'Essais de routine - sorbonnes de laboratoire',
+		'Hottes - Armoires ventilées - Bras aspirants',
+		'Audit aéraulique - réseau de ventilation',
+		'Formation'
+	];
 
-  captchaResponse = null;
-  dataTest = null;
+	captchaResponse = null;
+	formError = null;
 
-  resolved(captchaResponse: string) {
-    this.captchaResponse = captchaResponse;
-    // console.log(`Resolved captcha with response ${captchaResponse}:`);
-  }
+	resolved(captchaResponse: string) {
+		this.captchaResponse = captchaResponse;
+	}
 
-  onSubmit() {
-    console.log(this.diagnostic);
+	onSubmit() {
+		// this.devisService.getData().subscribe(
+		//   dataTest => this.dataTest = dataTest.toString()
+		// );
 
-    this.devisService.getData().subscribe(
-      dataTest => this.dataTest = dataTest.toString()
-    );
+		this.devisService.submitForm({
+			form: this.model,
+			captchaResponse: this.captchaResponse
+		}).subscribe(
+			formError => this.formError = formError.toString()
+		);
 
-    this.devisService.submitForm({
-      form: this.model,
-      captchaResponse: this.captchaResponse
-    }).subscribe(
-      dataTest => this.dataTest = dataTest.toString()
-    );
+		console.log('formError = ' + this.formError);
+	}
 
-  }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+	// TODO: Remove this when we're done
+	get errors() {
+		return JSON.stringify(this.model);
+	}
 
 }
