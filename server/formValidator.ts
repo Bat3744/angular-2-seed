@@ -1,3 +1,6 @@
+import * as request from 'request';
+import Promise from 'core-js/es6/promise';
+
 export class FormValidator {
 
 	validate(form: any): Object {
@@ -41,8 +44,46 @@ export class FormValidator {
 		return {};
 	}
 
-	recaptchaValidation(secret:string, response:string): Object {
-		// 6LfVbiEUAAAAAOinkUGIVn6uXq-N7r4_iDL58-Gz
+	recaptchaValidation(response:string): Object {
+
+		return new Promise((resolve, reject) => {
+			request.post({
+				url: 'https://www.google.com/recaptcha/api/siteverify',
+				form: {
+					secret: '6LfVbiEUAAAAAOinkUGIVn6uXq-N7r4_iDL58-Gz',
+					response: response
+				}
+			}, function (err, httpResponse, body) {
+				console.log('err = ' + err);
+				console.log('httpResponse = ' + httpResponse);
+				console.log('body = ' + body);
+
+				if (!body.success) {
+					resolve({});
+				} else {
+					reject({'captcha': 'captcha error'})
+				}
+			});
+		});
+
+
+		// const options = {
+		// 	method: 'POST',
+		// 	uri: 'https://www.google.com/recaptcha/api/siteverify',
+		// 	body: {
+		// 		secret: '6LfVbiEUAAAAAOinkUGIVn6uXq-N7r4_iDL58-Gz',
+		// 		response: response
+		// 	},
+		// 	json: true
+		// };
+        //
+		// return rp(options)
+		// 	.then(function (parsedBody) {
+		// 		return {};
+		// 	})
+		// 	.catch(function (err) {
+		// 		return {'captcha': 'captcha error'};
+		// 	});
 	}
 
 }

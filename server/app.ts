@@ -34,14 +34,19 @@ app.get('/test', function (req, res) {
 
 app.post('/submitDevis', function (req, res) {
 	const form = req.body.data.form,
+		captchaResponse = req.body.data.captchaResponse,
 		formValidator = new FormValidator(),
-		error = formValidator.validate(form);
+		captchaError = formValidator.recaptchaValidation(captchaResponse),
+		formError = formValidator.validate(form);
 
-	console.log(JSON.stringify(error));
+	console.log(JSON.stringify(captchaError));
+	console.log(JSON.stringify(formError));
 
-	if (Object.keys(error).length > 0) {
-		res.send(error);
-	} else {
+	if (Object.keys(captchaError).length > 0) {
+		res.send(captchaError);
+	} else if (Object.keys(formError).length > 0) {
+		res.send(captchaError);
+	} else{
 		res.send('OK');
 	}
 });
