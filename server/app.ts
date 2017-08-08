@@ -33,21 +33,25 @@ app.get('/test', function (req, res) {
 });
 
 app.post('/submitDevis', function (req, res) {
+
 	const form = req.body.data.form,
 		captchaResponse = req.body.data.captchaResponse,
 		formValidator = new FormValidator(),
-		captchaPromise = formValidator.recaptchaValidation(captchaResponse),
-		formError = formValidator.validate(form);
+		captchaPromise = formValidator.recaptchaValidation(captchaResponse);
 
-	captchaPromise.then(
-		captchaError => {
-			if (Object.keys(captchaError).length > 0) {
-				res.send(captchaError);
-			} else if (Object.keys(formError).length > 0) {
-				res.send(captchaError);
-			} else{
+	captchaPromise
+		.then(() => {
+
+			const formError = formValidator.validate(form);
+
+			if (Object.keys(formError).length > 0) {
+				res.send(formError);
+			} else {
 				res.send('OK');
 			}
+
+		}).catch(error => {
+			res.send(error);
 		});
 
 });

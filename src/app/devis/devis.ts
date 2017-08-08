@@ -2,7 +2,7 @@ export class Devis {
 
   constructor() {  }
 
-  /*constructor(
+/*  constructor(
     public id: number,
     public nom: string,
     public prenom: string,

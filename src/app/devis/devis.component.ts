@@ -30,9 +30,6 @@ export class DevisComponent {
 	}
 
 	onSubmit() {
-		// this.devisService.getData().subscribe(
-		//   dataTest => this.dataTest = dataTest.toString()
-		// );
 
 		this.devisService.submitForm({
 			form: this.model,

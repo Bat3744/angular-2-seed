@@ -22,11 +22,11 @@ export class DevisService {
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}
 
-	getData(): Observable<string> {
+	/*getData(): Observable<string> {
 		return this.http.get(this.getServerUrl() + '/test')
 			.map(this.extractData)
 			.catch(this.handleError);
-	}
+	}*/
 
 	getServerUrl(): string {
 		return 'http://' + window.location.hostname + ':3003';

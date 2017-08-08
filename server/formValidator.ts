@@ -14,9 +14,7 @@ export class FormValidator {
 	stringValidation(value: string, field: string): Object {
 		if (!value) {
 			return {[field]: 'Le ' + field + ' est obligatoire'};
-		}
-
-		if (!value.match(/^[a-zA-Zàâéèëêïîôùüçœ\'’ -]{1,60}$/)) {
+		} else if (!value.match(/^[a-zA-Zàâéèëêïîôùüçœ\'’ -]{1,60}$/)) {
 			return {[field]: 'Le ' + field + ' n\'est pas valide'};
 		}
 
@@ -26,9 +24,7 @@ export class FormValidator {
 	emailValidation(value: string): Object {
 		if (!value) {
 			return {email: 'L\'email est obligatoire'};
-		}
-
-		if (!value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+		} else if (!value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
 			return {email: 'L\'email n\'est pas valide'};
 		}
 
@@ -36,7 +32,7 @@ export class FormValidator {
 	}
 
 	telephoneValidation(value: string): Object {
-		if (!value.match(/^([0-9+\-. ]?){5,20}$/)) {
+		if (value && !value.match(/^([0-9+\-. ]?){5,20}$/)) {
 			return {telephone: 'Le telephone n\'est pas valide'};
 		}
 
@@ -53,14 +49,17 @@ export class FormValidator {
 					response: response
 				}
 			}, function (err, httpResponse, body) {
+				const info = JSON.parse(body);
+
 				console.log('err = ' + err);
 				console.log('httpResponse = ' + httpResponse);
-				console.log('body = ' + body);
+				console.log('body = ' + info);
+				console.log('body.success = ' + info.success);
 
-				if (!body.success) {
-					resolve({});
+				if (!info.success) {
+					reject({'captcha': 'captcha error'});
 				} else {
-					reject({'captcha': 'captcha error'})
+					resolve();
 				}
 			});
 		});
