@@ -36,19 +36,20 @@ app.post('/submitDevis', function (req, res) {
 	const form = req.body.data.form,
 		captchaResponse = req.body.data.captchaResponse,
 		formValidator = new FormValidator(),
-		captchaError = formValidator.recaptchaValidation(captchaResponse),
+		captchaPromise = formValidator.recaptchaValidation(captchaResponse),
 		formError = formValidator.validate(form);
 
-	console.log(JSON.stringify(captchaError));
-	console.log(JSON.stringify(formError));
+	captchaPromise.then(
+		captchaError => {
+			if (Object.keys(captchaError).length > 0) {
+				res.send(captchaError);
+			} else if (Object.keys(formError).length > 0) {
+				res.send(captchaError);
+			} else{
+				res.send('OK');
+			}
+		});
 
-	if (Object.keys(captchaError).length > 0) {
-		res.send(captchaError);
-	} else if (Object.keys(formError).length > 0) {
-		res.send(captchaError);
-	} else{
-		res.send('OK');
-	}
 });
 
 app.get('/#/test', function (req, res) {

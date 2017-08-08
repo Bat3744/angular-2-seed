@@ -1,5 +1,4 @@
 import * as request from 'request';
-import Promise from 'core-js/es6/promise';
 
 export class FormValidator {
 
@@ -44,7 +43,7 @@ export class FormValidator {
 		return {};
 	}
 
-	recaptchaValidation(response:string): Object {
+	recaptchaValidation(response:string): Promise<Object> {
 
 		return new Promise((resolve, reject) => {
 			request.post({
