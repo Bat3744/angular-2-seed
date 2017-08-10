@@ -4,6 +4,10 @@
     <h1>DEVIS</h1>
   </div>
 
+	<div class="row" *ngIf="formErrors">
+		<div class="alert alert-danger form-errors" role="alert" [innerHTML]="formErrors"></div>
+	</div>
+
   <form (ngSubmit)="onSubmit()">
 
     <div class="row">

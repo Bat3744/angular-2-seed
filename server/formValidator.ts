@@ -2,13 +2,46 @@ import * as request from 'request';
 
 export class FormValidator {
 
-	validate(form: any): Object {
-		const nomError: Object = this.stringValidation(form.nom, 'nom');
-		const prenomError: Object = this.stringValidation(form.prenom, 'prenom');
-		const emailValidation: Object = this.emailValidation(form.email);
-		const telephoneValidation: Object = this.telephoneValidation(form.telephone);
+	validate(form: any): Promise<Object> {
 
-		return Object.assign({}, nomError, prenomError, emailValidation, telephoneValidation);
+		return new Promise((resolve, reject) => {
+
+			const nomError: Object = this.stringValidation(form.nom, 'nom');
+			const prenomError: Object = this.stringValidation(form.prenom, 'prenom');
+			const emailValidation: Object = this.emailValidation(form.email);
+			const telephoneValidation: Object = this.telephoneValidation(form.telephone);
+
+			const errors = Object.assign({}, nomError, prenomError, emailValidation, telephoneValidation);
+
+			if (Object.keys(errors).length > 0) {
+				resolve(errors);
+			} else {
+				resolve();
+			}
+		});
+
+	}
+
+	recaptchaValidation(response:string): Promise<Object> {
+
+		return new Promise((resolve, reject) => {
+			request.post({
+				url: 'https://www.google.com/recaptcha/api/siteverify',
+				form: {
+					secret: '6LfVbiEUAAAAAOinkUGIVn6uXq-N7r4_iDL58-Gz',
+					response: response
+				}
+			}, function (err, httpResponse, body) {
+				const info = JSON.parse(body);
+
+				if (!info.success) {
+					resolve({'captcha': 'captcha error'});
+				} else {
+					resolve();
+				}
+			});
+		});
+
 	}
 
 	stringValidation(value: string, field: string): Object {
@@ -37,51 +70,6 @@ export class FormValidator {
 		}
 
 		return {};
-	}
-
-	recaptchaValidation(response:string): Promise<Object> {
-
-		return new Promise((resolve, reject) => {
-			request.post({
-				url: 'https://www.google.com/recaptcha/api/siteverify',
-				form: {
-					secret: '6LfVbiEUAAAAAOinkUGIVn6uXq-N7r4_iDL58-Gz',
-					response: response
-				}
-			}, function (err, httpResponse, body) {
-				const info = JSON.parse(body);
-
-				console.log('err = ' + err);
-				console.log('httpResponse = ' + httpResponse);
-				console.log('body = ' + info);
-				console.log('body.success = ' + info.success);
-
-				if (!info.success) {
-					reject({'captcha': 'captcha error'});
-				} else {
-					resolve();
-				}
-			});
-		});
-
-
-		// const options = {
-		// 	method: 'POST',
-		// 	uri: 'https://www.google.com/recaptcha/api/siteverify',
-		// 	body: {
-		// 		secret: '6LfVbiEUAAAAAOinkUGIVn6uXq-N7r4_iDL58-Gz',
-		// 		response: response
-		// 	},
-		// 	json: true
-		// };
-        //
-		// return rp(options)
-		// 	.then(function (parsedBody) {
-		// 		return {};
-		// 	})
-		// 	.catch(function (err) {
-		// 		return {'captcha': 'captcha error'};
-		// 	});
 	}
 
 }

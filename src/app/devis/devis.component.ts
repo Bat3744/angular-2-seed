@@ -23,7 +23,7 @@ export class DevisComponent {
 	];
 
 	captchaResponse = null;
-	formError = null;
+	formErrors = '';
 
 	resolved(captchaResponse: string) {
 		this.captchaResponse = captchaResponse;
@@ -34,11 +34,21 @@ export class DevisComponent {
 		this.devisService.submitForm({
 			form: this.model,
 			captchaResponse: this.captchaResponse
-		}).subscribe(
-			formError => this.formError = formError.toString()
-		);
+		}).subscribe(formError => this.displayFormErrors(formError));
 
-		console.log('formError = ' + this.formError);
+	}
+
+	displayFormErrors(formError: Object) {
+
+		this.formErrors = '';
+
+		for (let key of Object.keys(formError)) {
+			let error = formError[key];
+
+			this.formErrors += formError[key];
+			this.formErrors += '<br/>';
+		}
+
 	}
 
 	// TODO: Remove this when we're done
