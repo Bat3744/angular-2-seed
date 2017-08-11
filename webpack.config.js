@@ -29,7 +29,11 @@ var webpackConfig = {
     ),
     new webpack.EnvironmentPlugin([
       'CONFIG_VAR', 'NODE_ENV'
-      ])
+	]),
+	  new webpack.ProvidePlugin({
+		  $: "jquery",
+		  jQuery: "jquery"
+	  })
   ],
 
   module: {

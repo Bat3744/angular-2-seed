@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Devis} from './devis';
-import {DevisService} from './devis.service';
+import { Component } from '@angular/core';
+import { Devis } from './devis';
+import { DevisService } from './devis.service';
 
 @Component({
 	selector: 'devis',
@@ -35,6 +35,8 @@ export class DevisComponent {
 			form: this.model,
 			captchaResponse: this.captchaResponse
 		}).subscribe(formError => this.displayFormErrors(formError));
+
+		grecaptcha.reset();
 
 	}
 
