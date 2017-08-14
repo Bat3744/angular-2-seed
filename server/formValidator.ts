@@ -13,7 +13,7 @@ export class FormValidator {
 
 			const errors = Object.assign({}, nomError, prenomError, emailValidation, telephoneValidation);
 
-			if (Object.keys(errors).length > 0) {
+			if (!this.isEmpty(errors)) {
 				resolve(errors);
 			} else {
 				resolve();
@@ -35,7 +35,7 @@ export class FormValidator {
 				const info = JSON.parse(body);
 
 				if (!info.success) {
-					resolve({'captcha': 'captcha error'});
+					resolve({'captcha': 'Le captcha n\'est pas valide'});
 				} else {
 					resolve();
 				}
@@ -51,7 +51,7 @@ export class FormValidator {
 			return {[field]: 'Le ' + field + ' n\'est pas valide'};
 		}
 
-		return {};
+		return null;
 	}
 
 	emailValidation(value: string): Object {
@@ -61,7 +61,7 @@ export class FormValidator {
 			return {email: 'L\'email n\'est pas valide'};
 		}
 
-		return {};
+		return null;
 	}
 
 	telephoneValidation(value: string): Object {
@@ -69,7 +69,17 @@ export class FormValidator {
 			return {telephone: 'Le telephone n\'est pas valide'};
 		}
 
-		return {};
+		return null;
+	}
+
+	isEmpty(obj: Object): boolean {
+		for (var key in obj) {
+			console.log(key);
+
+			if (obj.hasOwnProperty(key))
+				return false;
+		}
+		return true;
 	}
 
 }

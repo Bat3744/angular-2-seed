@@ -24,9 +24,14 @@ export class DevisComponent {
 
 	captchaResponse = null;
 	formErrors = '';
+	formSuccess = '';
 
 	resolved(captchaResponse: string) {
 		this.captchaResponse = captchaResponse;
+	}
+
+	textareaValueChange(ev) {
+		this.model._infoComplementaire = ev.target.value;
 	}
 
 	onSubmit() {
@@ -34,28 +39,31 @@ export class DevisComponent {
 		this.devisService.submitForm({
 			form: this.model,
 			captchaResponse: this.captchaResponse
-		}).subscribe(formError => this.displayFormErrors(formError));
+		}).subscribe(formError => {
+			if (Object.keys(formError).length > 0) {
+				this.displayFormErrors(formError);
+			} else {
+				this.displayOKResult();
+				this.model = new Devis();
+			}
+
+		});
 
 		grecaptcha.reset();
-
 	}
 
 	displayFormErrors(formError: Object) {
-
 		this.formErrors = '';
 
 		for (let key of Object.keys(formError)) {
-			let error = formError[key];
-
 			this.formErrors += formError[key];
 			this.formErrors += '<br/>';
 		}
 
 	}
 
-	// TODO: Remove this when we're done
-	get errors() {
-		return JSON.stringify(this.model);
+	displayOKResult() {
+		this.formSuccess = 'Votre demande de devis à bien été envoyé';
 	}
 
 }

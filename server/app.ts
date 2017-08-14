@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import { FormValidator } from '../server/formValidator';
+import { MailUtils } from '../server/mailUtils';
 
 const app = express(),
 	env = process.env.NODE_ENV || 'development',
@@ -38,14 +39,21 @@ app.post('/submitDevis', function (req, res) {
 		captchaResponse = req.body.data.captchaResponse,
 		formValidator = new FormValidator(),
 		captchaPromise = formValidator.recaptchaValidation(captchaResponse),
-		formPromise = formValidator.validate(form);
+		formPromise = formValidator.validate(form),
+		mailUtils = new MailUtils();
 
 	Promise.all([captchaPromise, formPromise]).then(errors => {
 
-		if (Object.keys(errors).length > 0) {
-			res.send(Object.assign({}, errors[0], errors[1]));
+		const allErrors = Object.assign({}, errors[0], errors[1]);
+
+		if (!formValidator.isEmpty(allErrors)) {
+			res.send(allErrors);
 		} else {
-			res.send('OK');
+			mailUtils.sendEmail(form).then(() => {
+				res.send({});
+			}).catch((err) => {
+				res.send(err);
+			});
 		}
 
 	});

@@ -2,6 +2,16 @@ export class Devis {
 
   constructor() {  }
 
+	private infoComplementaire:string;
+
+	get _infoComplementaire():string {
+		return this.infoComplementaire;
+	}
+
+	set _infoComplementaire(infoComplementaire:string) {
+		this.infoComplementaire = infoComplementaire;
+	}
+
 /*  constructor(
     public id: number,
     public nom: string,
