@@ -47,7 +47,7 @@ var webpackConfig = {
         ]
       },
       {
-        test: /\.(jpg|png|gif)$/,
+        test: /\.(jpg|png|gif|mp4)$/,
         loader: 'url-loader'
       },
       {
