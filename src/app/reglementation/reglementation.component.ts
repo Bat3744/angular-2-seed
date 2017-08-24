@@ -1,4 +1,5 @@
-import { Component, OnInit }  from '@angular/core';
+import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Component({
   //moduleId: module.id,
@@ -8,7 +9,9 @@ import { Component, OnInit }  from '@angular/core';
 
 export class ReglementationComponent {
 
-  reglementation1Src = require('../../static/reglementation_1.png');
-  reglementation2Src = require('../../static/reglementation_2.png');
+	constructor(private sanitized: DomSanitizer) {}
 
+	diagramEssaiSVG = this.sanitized.bypassSecurityTrustHtml(require('../../static/diag_essais.svg'));
+	reglementation1Src = require('../../static/reglementation_1.png');
+	reglementation2Src = require('../../static/reglementation_2.png');
 }
