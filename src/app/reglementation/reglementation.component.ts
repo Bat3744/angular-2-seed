@@ -11,7 +11,7 @@ export class ReglementationComponent {
 
 	constructor(private sanitized: DomSanitizer) {}
 
-	diagramEssaiSVG = this.sanitized.bypassSecurityTrustHtml(require('../../static/diag_essais.svg'));
+	diagramEssaiSVG = this.sanitized.bypassSecurityTrustHtml(require('../../static/diag_essais_4.svg'));
 	reglementation1Src = require('../../static/reglementation_1.png');
 	reglementation2Src = require('../../static/reglementation_2.png');
 }
