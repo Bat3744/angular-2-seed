@@ -1,7 +1,7 @@
 {
-  "name": "heroku-angular2-seed",
+  "name": "control-air",
   "version": "1.0.0",
-  "description": "A simple starter Angular2 project ready to deploy to Heroku",
+  "description": "Spécialiste en mesure et analyse des comportements aérauliques",
   "main": "server/app.ts",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts",
