@@ -1,7 +1,7 @@
 {
-  "name": "heroku-angular2-seed",
+  "name": "Control'Air",
   "version": "1.0.0",
-  "description": "A simple starter Angular2 project ready to deploy to Heroku",
+  "description": "Sit de Control'Air",
   "main": "server/app.ts",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts",
