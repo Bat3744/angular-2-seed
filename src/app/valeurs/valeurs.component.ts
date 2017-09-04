@@ -15,12 +15,6 @@ export class ValeursComponent {
   constructor (private valeursService: ValeursService) {
   }
 
-  ngOnInit() {
-    this.valeursService.getData().subscribe(
-      dataTest => this.dataTest = dataTest.toString()
-    );
-  }
-
   valeursData = require("./valeursData.json");
 
 }
