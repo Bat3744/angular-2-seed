@@ -1,3 +1,4 @@
+import { enableProdMode } from '@angular/core';
 import './polyfills.browser';
 import './styles.css';
 import 'jquery';
@@ -9,6 +10,11 @@ import { AppModule } from './app/app.module';
 export const platformRef = platformBrowserDynamic();
 
 export function main() {
+
+	if (!/localhost/.test(document.location.host)) {
+		enableProdMode();
+	}
+
   return platformRef.bootstrapModule(AppModule)
     .catch(err => console.error(err));
 }
