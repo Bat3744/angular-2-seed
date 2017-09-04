@@ -1,7 +1,7 @@
 {
-  "name": "Control'Air",
+  "name": "control-air",
   "version": "1.0.0",
-  "description": "Sit de Control'Air",
+  "description": "Spécialiste en mesure et analyse des comportements aérauliques",
   "main": "server/app.ts",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts",
