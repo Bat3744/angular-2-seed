@@ -401,3 +401,18 @@ p {
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; }
+
+/************************************
+  FOOTER
+*************************************/
+
+#footer-bloc {
+	background: #000;
+	text-align: center;
+	padding: 30px;
+}
+
+#footer-bloc a {
+	color: #BDBDBD;
+	text-decoration: none;
+}

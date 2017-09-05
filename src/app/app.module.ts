@@ -12,6 +12,7 @@ import { RecaptchaModule } from 'ng2-recaptcha';
 
 import { MenuComponent }   from './menu/menu.component';
 import { HeaderComponent }   from './header/header.component';
+import { FooterComponent }   from './footer/footer.component';
 import { ValeursComponent } from './valeurs/valeurs.component';
 import { ValeursService } from './valeurs/valeurs.service';
 import { ReglementationComponent } from './reglementation/reglementation.component';
@@ -25,6 +26,7 @@ import { ContactComponent } from './contact/contact.component';
     AppComponent,
     MenuComponent,
     HeaderComponent,
+    FooterComponent,
     ValeursComponent,
     ReglementationComponent,
     PrestationsComponent,
