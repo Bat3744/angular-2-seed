@@ -134,6 +134,12 @@ p {
   border-bottom: 1px solid #E5E5E5;
 }
 
+/*
+#header-bloc .header-row {
+	background-image: url('/static/header-background-4.jpeg');
+}
+*/
+
 #header-bloc h1 {
     font-size: 60px;
     line-height: 1;
@@ -407,6 +413,8 @@ p {
 *************************************/
 
 #footer-bloc {
+	font-family: 'Roboto',Helvetica,Arial,sans-serif;
+	font-size: 16px;
 	background: #000;
 	text-align: center;
 	padding: 30px;
@@ -415,4 +423,14 @@ p {
 #footer-bloc a {
 	color: #BDBDBD;
 	text-decoration: none;
+}
+
+#mentionsLegalesCollapse {
+	padding: 0 25%;
+}
+
+#footer-bloc .well {
+	background: #f1f1f1;
+	margin-top: 20px;
+	border-radius: 0;
 }
