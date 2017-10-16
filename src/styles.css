@@ -266,14 +266,14 @@ p {
 
 .diagramSVG svg {
 	width: 100%;
-	min-width: 511px;
+	/*min-width: 511px;*/
 	height: 481px;
 	margin-top: 25px;
 }
 
 .diagram2SVG svg {
 	width: 100%;
-	min-width: 511px;
+	/*min-width: 511px;*/
 	height: 235px;
 	margin-top: 25px;
 }
@@ -441,4 +441,11 @@ p {
 	background: #f1f1f1;
 	margin-top: 20px;
 	border-radius: 0;
+}
+
+@media screen and (max-width: 640px) {
+	#mentionsLegalesCollapse {
+		padding: 0;
+	}
+
 }
