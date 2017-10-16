@@ -222,6 +222,14 @@ p {
   padding-bottom: 25px;
 }
 
+#valeurs-bloc .valeur-title {
+	font-size: 1.8rem;
+	font-weight: 800;
+	margin-left: 40px;
+	display: inline-block;
+	font-family: 'Comfortaa', cursive;
+}
+
 /************************************
   REGLEMENTATION
 *************************************/
