@@ -4,17 +4,17 @@ import { FormValidator } from '../server/formValidator';
 import { MailUtils } from '../server/mailUtils';
 
 const app = express(),
-	env = process.env.NODE_ENV || 'development',
+	env = process.env.NODE_ENV || 'development'/*,
 	forceSsl = function (req, res, next) {
 		if (req.headers['x-forwarded-proto'] !== 'https') {
 			return res.redirect(['https://', req.get('Host'), req.url].join(''));
 		}
 		return next();
-	};
+	}*/;
 
-if (env === 'production') {
+/*if (env === 'production') {
 	app.use(forceSsl);
-}
+}*/
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
