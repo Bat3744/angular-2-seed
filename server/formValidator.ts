@@ -32,16 +32,18 @@ export class FormValidator {
 					response: response
 				}
 			}, function (err, httpResponse, body) {
-				const info = JSON.parse(body);
+				const info = body ? JSON.parse(body) : '';
 
 				if (!info.success) {
+
+					console.log('err = ' + err);
+
 					resolve({'captcha': 'Le captcha n\'est pas valide'});
 				} else {
 					resolve();
 				}
 			});
 		});
-
 	}
 
 	stringValidation(value: string, field: string): Object {

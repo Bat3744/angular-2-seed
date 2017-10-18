@@ -25,10 +25,6 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.get('/', function (req, res) {
-	res.send('Hello World!');
-});
-
 app.get('/test', function (req, res) {
 	res.send('Hello test World!');
 });
@@ -58,10 +54,6 @@ app.post('/submitDevis', function (req, res) {
 
 	});
 
-});
-
-app.get('/#/test', function (req, res) {
-	res.send('Hello World! 2');
 });
 
 app.listen(3003, function () {

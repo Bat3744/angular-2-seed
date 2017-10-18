@@ -7,7 +7,6 @@ var path = require('path');
 var webpackMerge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// Webpack Config
 var webpackConfig = {
   entry: {
     'main': './src/main.browser.ts',

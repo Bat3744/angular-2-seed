@@ -2,7 +2,6 @@
   "name": "control-air",
   "version": "1.0.0",
   "description": "Spécialiste en mesure et analyse des comportements aérauliques",
-  "main": "server/app.ts",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts",
     "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
@@ -10,7 +9,7 @@
     "postinstall": "npm run build",
     "client": "webpack-dev-server --inline --progress --port 3000 --content-base src",
     "server": "tsc -p ./server && node dist/server/app.js",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "run-p server client",
     "createAssetsDir": "mkdir -p dist/static",
     "copyImages": "cp -R src/static dist/"
   },
@@ -56,7 +55,6 @@
     "awesome-typescript-loader": "^3.2.2",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
-    "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
     "css-loader": "^0.28.4",
     "dompurify": "^1.0.1",
@@ -69,6 +67,7 @@
     "json-loader": "^0.5.4",
     "ng2-recaptcha": "^1.7.0",
     "nodemailer": "^4.0.1",
+    "npm-run-all": "^4.1.1",
     "ntypescript": "1.201706190042.1",
     "raw-loader": "^0.5.1",
     "reflect-metadata": "^0.1.3",
