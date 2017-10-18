@@ -23,7 +23,7 @@ export class DevisService {
 	}
 
 	getServerUrl(): string {
-		return 'https://' + window.location.hostname + ':3003';
+		return 'http://' + window.location.hostname + ':3003';
 	}
 
 }
