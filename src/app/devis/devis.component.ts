@@ -9,6 +9,8 @@ import { DevisService } from './devis.service';
 
 export class DevisComponent {
 
+	public textareaValue: string;
+
 	constructor(private devisService: DevisService) {
 	}
 

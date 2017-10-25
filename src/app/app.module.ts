@@ -34,7 +34,7 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'control-air'}),
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
