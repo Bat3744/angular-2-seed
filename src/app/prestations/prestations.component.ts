@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { Overlay } from 'angular2-modal';
-import { Modal } from 'angular2-modal/plugins/bootstrap';
+import { Overlay } from 'ngx-modialog';
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
 
 @Component({
   //moduleId: module.id,

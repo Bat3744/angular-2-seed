@@ -6,13 +6,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
-import { ModalModule } from 'angular2-modal';
-import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { ModalModule } from 'ngx-modialog';
+import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
 import { RecaptchaModule } from 'ng2-recaptcha';
 
-import { MenuComponent }   from './menu/menu.component';
-import { HeaderComponent }   from './header/header.component';
-import { FooterComponent }   from './footer/footer.component';
+import { MenuComponent } from './menu/menu.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 import { ValeursComponent } from './valeurs/valeurs.component';
 import { ValeursService } from './valeurs/valeurs.service';
 import { ReglementationComponent } from './reglementation/reglementation.component';
