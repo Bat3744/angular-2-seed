@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { Overlay } from 'ngx-modialog';
-import { Modal } from 'ngx-modialog/plugins/bootstrap';
+// import { Overlay } from 'ngx-modialog';
+// import { Modal } from 'ngx-modialog/plugins/bootstrap';
 
 @Component({
   //moduleId: module.id,
@@ -10,9 +10,9 @@ import { Modal } from 'ngx-modialog/plugins/bootstrap';
 
 export class PrestationsComponent {
 
-  constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal) {
-    // overlay.defaultViewContainer = vcRef;
-  }
+  // constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal) {
+  //   // overlay.defaultViewContainer = vcRef;
+  // }
 
   prestationsData = require("./prestationsData.json");
 

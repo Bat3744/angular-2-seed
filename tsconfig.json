@@ -22,7 +22,7 @@
 	},
 	"exclude": [
 		"node_modules",
-		"seo-server"
+		"seo-server/server.ts"
 	],
 	"awesomeTypescriptLoaderOptions": {
 		"useWebpackText": true

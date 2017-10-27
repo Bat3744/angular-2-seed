@@ -6,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
-import { ModalModule } from 'ngx-modialog';
-import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
+// import { ModalModule } from 'ngx-modialog';
+// import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
 import { RecaptchaModule } from 'ng2-recaptcha';
 
 import { MenuComponent } from './menu/menu.component';
@@ -38,8 +38,8 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    BootstrapModalModule,
-    ModalModule.forRoot(),
+    // BootstrapModalModule,
+    // ModalModule.forRoot(),
     RecaptchaModule.forRoot(),
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
