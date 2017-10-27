@@ -22,6 +22,7 @@
 		"./src/**/*.module.ts",
 		"./src/*.d.ts",
 		"./server/*.d.ts",
+		"./seo-server/*.d.ts",
 		"./tests/*.d.ts"
 	],
 	"angularCompilerOptions": {
