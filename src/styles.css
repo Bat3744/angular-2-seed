@@ -196,14 +196,20 @@ p {
   margin-bottom: 20px;
 }
 
+/************************************
+  SORBONNE
+*************************************/
+
+#sorbonne-bloc {
+	background: #f1f1f1;
+}
 
 /************************************
   VALEURS
 *************************************/
 
 #valeurs-bloc {
-  /*background: #007DC0;*/
-  background: #f1f1f1;
+	background: #ffffff;
 }
 
 #prestations-bloc p,
