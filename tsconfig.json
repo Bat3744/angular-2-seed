@@ -21,13 +21,16 @@
 		]
 	},
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"seo-server"
 	],
 	"awesomeTypescriptLoaderOptions": {
 		"useWebpackText": true
 	},
 	"angularCompilerOptions": {
-		"debug": false
+		"debug": false,
+		"genDir": "./dist/ngfactory",
+		"entryModule": "./src/app/app-server.module#AppModule"
 	},
 	"compileOnSave": false,
 	"buildOnSave": false,
