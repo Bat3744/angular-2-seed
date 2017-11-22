@@ -10,11 +10,18 @@ import { ValeursService }           from './valeurs.service';
 
 export class ValeursComponent {
 
-  dataTest: string;
+	dataTest: string;
 
-  constructor (private valeursService: ValeursService) {
-  }
+	constructor (private valeursService: ValeursService) {
+	}
 
-  valeursData = require("./valeursData.json");
+	ngOnInit() {
+		this.valeursService.getData().then(dataTest => {
+			this.dataTest = dataTest;
+			console.log('data = ' + this.dataTest);
+		});
+	}
+
+	valeursData = require("./valeursData.json");
 
 }

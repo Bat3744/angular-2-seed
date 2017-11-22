@@ -25,11 +25,11 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.get('/test', function (req, res) {
+app.get('/api/test', function (req, res) {
 	res.send('Hello test World!');
 });
 
-app.post('/submitDevis', function (req, res) {
+app.post('/api/submitDevis', function (req, res) {
 
 	const form = req.body.data.form,
 		captchaResponse = req.body.data.captchaResponse,
@@ -56,6 +56,8 @@ app.post('/submitDevis', function (req, res) {
 
 });
 
-app.listen(3003, function () {
+const port = process.env.PORT || 3003;
+
+app.listen(port, function () {
 	console.log('ControlAir server started');
 });
