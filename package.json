@@ -7,9 +7,10 @@
     "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
     "watch": "npm run build -- --watch",
     "postinstall": "npm run build",
-    "client": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "server": "tsc -p ./server && node dist/server/app.js",
-    "start": "run-p server client",
+    "start:dev": "run-p start:server:dev build:dev",
+    "start:server:dev": "tsc -p ./server && node dist/server/app.js",
+    "build:dev": "webpack-dev-server --inline --progress --port 3000 --content-base src",
+    "start": "node dist/server/app.js",
     "createAssetsDir": "mkdir -p dist/static",
     "copyImages": "cp -R src/static dist/"
   },
