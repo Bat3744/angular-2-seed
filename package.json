@@ -4,7 +4,7 @@
   "description": "Spécialiste en mesure et analyse des comportements aérauliques",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts",
-    "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node webpack && cp src/index.html dist/index.html",
+    "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
     "watch": "npm run build -- --watch",
     "postinstall": "npm run build",
     "start:dev": "run-p start:server:dev build:dev",
