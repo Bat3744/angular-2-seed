@@ -10,7 +10,7 @@
     "server:dev": "tsc -p ./server && node dist/server/app.js",
     "test": "mocha -r ts-node/register tests/**/*.ts",
     "watch": "npm run build -- --watch",
-    "postinstall": "run-s build start",
+    "postinstall": "run-s build server:dev",
     "createAssetsDir": "mkdir -p dist/static",
     "copyImages": "cp -R src/static dist/"
   },
