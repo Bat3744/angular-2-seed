@@ -9,8 +9,6 @@
     "server": "tsc -p ./server && nodemon dist/server/app.js",
     "test": "mocha -r ts-node/register tests/**/*.ts",
     "watch": "npm run build -- --watch",
-    "postinstall": "npm run build",
-    "heroku-postbuild": "npm run server",
     "createAssetsDir": "mkdir -p dist/static",
     "copyImages": "cp -R src/static dist/"
   },
