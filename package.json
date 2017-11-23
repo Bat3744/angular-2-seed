@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Spécialiste en mesure et analyse des comportements aérauliques",
   "scripts": {
-    "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
+    "build": "run-s build:build build:start",
+    "build:build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
+    "build:start": "npm run start",
     "start": "node dist/server/app.js",
     "start:dev": "run-p server:dev build:dev",
     "build:dev": "webpack-dev-server --inline --progress --port 3000 --content-base src",
@@ -25,7 +27,6 @@
     "html-loader": "^0.5.1",
     "json-loader": "^0.5.4",
     "mocha": "^4.0.1",
-    "nodemon": "^1.12.1",
     "style-loader": "^0.19.0",
     "ts-node": "^3.3.0",
     "webpack": "^3.5.0",
