@@ -4,7 +4,7 @@
   "description": "Spécialiste en mesure et analyse des comportements aérauliques",
   "scripts": {
     "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
-    "start": "nodemon node dist/server/app.js",
+    "start": "node dist/server/app.js",
     "start:dev": "run-p server:dev build:dev",
     "build:dev": "webpack-dev-server --inline --progress --port 3000 --content-base src",
     "server:dev": "tsc -p ./server && node dist/server/app.js",
