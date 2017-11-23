@@ -1,7 +1,7 @@
 import * as express from 'express';
-import * as bodyParser from 'body-parser';
-import { FormValidator } from '../server/formValidator';
-import { MailUtils } from '../server/mailUtils';
+// import * as bodyParser from 'body-parser';
+// import { FormValidator } from '../server/formValidator';
+// import { MailUtils } from '../server/mailUtils';
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.get('/api/test', function (req, res) {
 	res.send('Hello test World!');
 });
 
-app.post('/api/submitDevis', function (req, res) {
+/*app.post('/api/submitDevis', function (req, res) {
 
 	const form = req.body.data.form,
 		captchaResponse = req.body.data.captchaResponse,
@@ -34,10 +34,10 @@ app.post('/api/submitDevis', function (req, res) {
 
 	});
 
-});
+});*/
 
 const port = process.env.PORT || 3003;
 
 app.listen(port, function () {
-	console.log('ControlAir server started');
+	console.log('ControlAir server started on port ' + port);
 });

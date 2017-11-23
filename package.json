@@ -3,21 +3,21 @@
   "version": "1.0.0",
   "description": "Spécialiste en mesure et analyse des comportements aérauliques",
   "scripts": {
-    "test": "mocha -r ts-node/register tests/**/*.ts",
     "build": "npm run createAssetsDir && npm run copyImages && NODE_ENV=production node node_modules/.bin/webpack && cp src/index.html dist/index.html",
+    "start": "node dist/server/app.js",
+    "start:dev": "run-p server:dev build:dev",
+    "build:dev": "webpack-dev-server --inline --progress --port 3000 --content-base src",
+    "server:dev": "tsc -p ./server && node dist/server/app.js",
+    "test": "mocha -r ts-node/register tests/**/*.ts",
     "watch": "npm run build -- --watch",
     "postinstall": "npm run build",
-    "start:dev": "run-p start:server:dev build:dev",
-    "start:server:dev": "tsc -p ./server && node dist/server/app.js",
-    "build:dev": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "start": "node dist/server/app.js",
     "createAssetsDir": "mkdir -p dist/static",
     "copyImages": "cp -R src/static dist/"
   },
   "license": "MIT",
   "engines": {
-    "node": "8.5.0",
-    "npm": "5.4.2"
+    "node": "8.9.1",
+    "npm": "5.2.0"
   },
   "devDependencies": {
     "chai": "^4.1.0",
@@ -51,8 +51,8 @@
     "@types/mocha": "^2.2.41",
     "@types/node": "^8.0.19",
     "@types/nodemailer": "^3.1.1",
-    "@types/request": "^2.0.0",
-    "@types/request-promise": "^4.1.36",
+    "@types/request": "^2.0.6",
+    "@types/request-promise": "^4.1.39",
     "angular2-in-memory-web-api": "^0.0.21",
     "angular2-router-loader": "^0.3.4",
     "angular2-template-loader": "^0.6.0",
