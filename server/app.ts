@@ -5,7 +5,7 @@ import * as express from 'express';
 
 const app = express();
 
-app.use(express.static(__dirname));
+app.use('/', express.static(__dirname));
 
 app.get('/api/test', function (req, res) {
 	res.send('Hello test World!');
