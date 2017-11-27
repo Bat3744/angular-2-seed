@@ -1,5 +1,6 @@
 import * as express from 'express';
-import path from 'path';
+import * as path from 'path';
+
 // import * as bodyParser from 'body-parser';
 // import { FormValidator } from '../server/formValidator';
 // import { MailUtils } from '../server/mailUtils';
