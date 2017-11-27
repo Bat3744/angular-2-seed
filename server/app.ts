@@ -1,11 +1,14 @@
 import * as express from 'express';
+import path from 'path';
 // import * as bodyParser from 'body-parser';
 // import { FormValidator } from '../server/formValidator';
 // import { MailUtils } from '../server/mailUtils';
 
 const app = express();
 
-app.use('/src', express.static(__dirname));
+app.get('/', function(req, res) {
+	res.sendFile(path.join(__dirname + '/index.html'));
+});
 
 app.get('/api/test', function (req, res) {
 	res.send('Hello test World!');
