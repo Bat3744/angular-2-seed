@@ -1,29 +1,23 @@
-import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
-import {Observable} from 'rxjs/Rx';
-
-// Import RxJs required methods
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class DevisService {
 
-	submitResponse;
-
-	// Resolve HTTP using the constructor
 	constructor(private http: Http) {
-		this.submitResponse = {};
 	}
 
-	submitForm(data: Object): Observable<string> {
-		return this.http.post(this.getServerUrl() + '/submitDevis', {data})
-			.map((res:Response) => res.json())
-			.catch((error:any) => Observable.throw(error || 'Server error'));
+	submitForm(data: Object): Promise<any> {
+		return this.http.post('/api/submitDevis', {data})
+			.toPromise()
+			.then(response => response.json())
+			.catch(this.handleError);
 	}
 
-	getServerUrl(): string {
-		return 'https://' + window.location.hostname + ':3003';
+	private handleError (error: any) {
+		let errMsg = (error.message) ? error.message :
+			error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+		console.error(errMsg); // log to console instead
 	}
 
 }

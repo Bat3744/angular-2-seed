@@ -1,11 +1,14 @@
 import * as express from 'express';
+import * as bodyParser from 'body-parser';
 import * as path from 'path';
 
-// import * as bodyParser from 'body-parser';
-// import { FormValidator } from '../server/formValidator';
-// import { MailUtils } from '../server/mailUtils';
+import { FormValidator } from '../server/formValidator';
+import { MailUtils } from '../server/mailUtils';
 
 const app = express();
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../'));
 
@@ -17,7 +20,13 @@ app.get('/api/test', function (req, res) {
 	res.send('Hello test World!');
 });
 
-/*app.post('/api/submitDevis', function (req, res) {
+app.post('/api/submitDevis', function (req, res) {
+
+	console.log('request = ' + JSON.stringify(req.body));
+
+	if (!req.body || !req.body.data) {
+		handleError(res, "Invalid form data", "Must provide valid data", 400);
+	}
 
 	const form = req.body.data.form,
 		captchaResponse = req.body.data.captchaResponse,
@@ -42,7 +51,12 @@ app.get('/api/test', function (req, res) {
 
 	});
 
-});*/
+});
+
+function handleError(res, reason, message, code) {
+	console.log("ERROR : " + reason);
+	res.status(code || 500).json({"error": message});
+}
 
 const port = process.env.PORT || 3003;
 

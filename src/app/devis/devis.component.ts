@@ -41,7 +41,7 @@ export class DevisComponent {
 		this.devisService.submitForm({
 			form: this.model,
 			captchaResponse: this.captchaResponse
-		}).subscribe(formError => {
+		}).then(formError => {
 			if (Object.keys(formError).length > 0) {
 				this.displayFormErrors(formError);
 			} else {
