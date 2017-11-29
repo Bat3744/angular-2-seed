@@ -27,6 +27,7 @@ export class DevisComponent {
 	captchaResponse = null;
 	formErrors = '';
 	formSuccess = '';
+	envoiEnCours = false;
 
 	resolved(captchaResponse: string) {
 		this.captchaResponse = captchaResponse;
@@ -37,6 +38,8 @@ export class DevisComponent {
 	}
 
 	onSubmit() {
+
+		this.showLoading();
 
 		this.devisService.submitForm({
 			form: this.model,
@@ -49,9 +52,18 @@ export class DevisComponent {
 				this.model = new Devis();
 			}
 
+			this.hideLoading();
 		});
 
 		grecaptcha.reset();
+	}
+
+	showLoading() {
+		this.envoiEnCours = true;
+	}
+
+	hideLoading() {
+		this.envoiEnCours = false;
 	}
 
 	displayFormErrors(formError: Object) {
